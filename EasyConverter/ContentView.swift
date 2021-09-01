@@ -9,18 +9,26 @@
 
 import SwiftUI
 
-
-
 struct ContentView: View {
+    
+    @State public var selectedTab: Tab = .USA
+    
+    let size: CGFloat = 200 //this variable control size of intraconversion arrows icon
+    
     var body: some View {
         
         NavigationView {
 
                 ZStack {
-                
-                Image("Greyback").resizable().ignoresSafeArea().frame(width: 431, height: 850)
+            
+                Rectangle()
+                    .foregroundColor(.secondary)
+                    .ignoresSafeArea()
+                //Image("Greyback").resizable().ignoresSafeArea().frame(width: 431, height: 850)
                     
                 VStack {
+                    
+                    //ToolbarItem(content: <#T##() -> _#>) //Setting button in top left or right
                     
                     HStack {
                         
@@ -39,7 +47,6 @@ struct ContentView: View {
         */
                         }
                     }//end of easyConverterHStack
-                        
                     
                     Spacer()
                     
@@ -58,7 +65,10 @@ struct ContentView: View {
                         
                         Spacer()
                     
-                        NavigationLink (destination: USLanding()){ //changed from BritainConversionScreen() to USLanding
+                        NavigationLink (destination: USLanding(selectedTab: .Britain) ){
+                            
+                            
+                            //changed from BritainConversionScreen() to USLanding
                             VStack {
                                 Image("BritainFlag").resizable().aspectRatio(contentMode: .fit).padding(.trailing)
                                 Text("Make Convertions Within British Measuring System").foregroundColor(.black).padding(.trailing)
@@ -71,7 +81,18 @@ struct ContentView: View {
                     
                     Spacer()//btwn flags and bottom text
                     
-
+                    NavigationLink (destination: USLanding(selectedTab: .USToBrit)){ //changed from usaConversionScreen to USLanding
+                        VStack {
+                            Image(systemName: "arrow.right.arrow.left").resizable()
+                                .frame(width: size, height: size, alignment: .leading)
+                                .foregroundColor(.orange)
+                            Text("Make Convertions between US and EU").foregroundColor(.black).padding(.leading)
+                        }.navigationTitle("")
+                        
+                    }
+                    
+                    
+                    
                     Spacer()
 
                 }//end VStack
@@ -92,20 +113,6 @@ usaConversionScreen().tabItem { Image(systemName: "dollarsign.square") }
 BritainConversionScreen().tabItem { Image(systemName: "eurosign.square") }
 }
 */
-
-
-struct usaScreen: View{
-    var body: some View{
-        NavigationView{
-            
-        }
-        
-    }
-}
-
-
-
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

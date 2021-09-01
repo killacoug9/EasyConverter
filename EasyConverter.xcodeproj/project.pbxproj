@@ -15,6 +15,7 @@
 		633D87DC26DD3EF900104CC8 /* BritainConversionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633D87DB26DD3EF900104CC8 /* BritainConversionScreen.swift */; };
 		633D87DE26DF01CF00104CC8 /* SettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633D87DD26DF01CF00104CC8 /* SettingsScreen.swift */; };
 		633D87E026DF051000104CC8 /* USLanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633D87DF26DF051000104CC8 /* USLanding.swift */; };
+		633D87E226DF487300104CC8 /* Interconversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633D87E126DF487300104CC8 /* Interconversion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		633D87DB26DD3EF900104CC8 /* BritainConversionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BritainConversionScreen.swift; sourceTree = "<group>"; };
 		633D87DD26DF01CF00104CC8 /* SettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreen.swift; sourceTree = "<group>"; };
 		633D87DF26DF051000104CC8 /* USLanding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = USLanding.swift; sourceTree = "<group>"; };
+		633D87E126DF487300104CC8 /* Interconversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interconversion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				632C098F26D6054800F92424 /* EasyConverterApp.swift */,
 				632C099126D6054800F92424 /* ContentView.swift */,
 				633D87DF26DF051000104CC8 /* USLanding.swift */,
+				633D87E126DF487300104CC8 /* Interconversion.swift */,
 				633D87D926D9394600104CC8 /* usaConversionScreen.swift */,
 				633D87DB26DD3EF900104CC8 /* BritainConversionScreen.swift */,
 				633D87DD26DF01CF00104CC8 /* SettingsScreen.swift */,
@@ -150,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				633D87E226DF487300104CC8 /* Interconversion.swift in Sources */,
 				632C099226D6054800F92424 /* ContentView.swift in Sources */,
 				633D87E026DF051000104CC8 /* USLanding.swift in Sources */,
 				633D87DA26D9394600104CC8 /* usaConversionScreen.swift in Sources */,

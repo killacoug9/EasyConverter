@@ -3,33 +3,40 @@
 //  EasyConverter
 //
 //  Created by Kyle Hawkins on 8/31/21.
-//
+////
+//option + command to fold
 
 import SwiftUI
 
+enum Tab {
+    case USA
+    case Britain
+    case Settings
+    case USToBrit
+}
+
 
 struct USLanding: View {
+    
+    @State public var selectedTab: Tab = .USA
+    
     var body: some View {
         
-        TabView(){
+        TabView(selection: $selectedTab){
 
-            usaConversionScreen().tabItem { Image(systemName: "dollarsign.square") }.tag(1)
+            usaConversionScreen().tabItem { Image(systemName: "dollarsign.square") }.tag(Tab.USA)
                 
-            BritainConversionScreen().tabItem { Image(systemName: "eurosign.square") }.tag(2)
+            BritainConversionScreen().tabItem { Image(systemName: "eurosign.square") }.tag(Tab.Britain)
                 
-            SettingsScreen().tabItem { Image(systemName: "eurosign.square") }.tag(3)
+            Interconversion().tabItem { Image(systemName: "eurosign.square") }.tag(Tab.USToBrit)
+            
+            SettingsScreen().tabItem { Image(systemName: "gear") }.tag(Tab.Settings)
                 
             }
     }
 }
 
-/*
-struct AppTabView: View{
-    enum Tab {
-        case
-    }
-}
-*/
+
 
 struct USLanding_Previews: PreviewProvider {
     static var previews: some View {

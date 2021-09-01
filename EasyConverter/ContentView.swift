@@ -5,7 +5,7 @@
 //  Created by Kyle Hawkins on 8/24/21.
 //
 
-//Question: should i create multiple screens like usa andn brit, or create 1 struct but with passed variable and funcs depending on which button they choose??
+//Personal Question: should i create multiple screens like usa andn brit, or create 1 struct but with passed variable and funcs depending on which button they choose??
 
 import SwiftUI
 

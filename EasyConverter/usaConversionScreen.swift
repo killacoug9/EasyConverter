@@ -7,11 +7,15 @@
 
 //Speed(fps, mph, ), distance(inch, miles, ft, yards, etc), measurment for cooking(),
 
+//howo do i want it layed out???: two scroll bars over text edit bars, arrow logo from left to right,
+//multi dementional array with unit types?
+
 import SwiftUI
 
-
-
 struct usaConversionScreen: View {
+    
+    let usDataTypes = ["inches", "miles"]
+    
     var body: some View {
         
         NavigationView {
@@ -22,39 +26,54 @@ struct usaConversionScreen: View {
 
                 VStack{
                     
-                    Text("USA")
+                    Spacer()
                     
-                    /*
-                    Text("Hello World")
-                        .padding()
-                        .navigationTitle("SwiftUI")
-                        .toolbar {
-                            ToolbarItemGroup(placement: .bottomBar)
-                            {
-                                Button("Home") {
-                                    print("pressed")
-                                }
+                    HStack{
+                        
+                        Spacer()
+                        
+                        VStack{
                             
-                                Button("UK Conversion"){
+                            Text("Unit 1:")
+                            
+                            //Form {
+                                Section {
                                     
-                                }
-                                
-                                Button("US Conversion"){
+                                    Picker(selection: .constant(1), label: Text("Unit").padding()) {
+                                        /*
+                                        ForEach(0 ..< usDataTypes.count) { number in
+                                            Text("Row \(number)")
+                                            
+                                         }*/
+                                        
+                                        
+                                        /*@START_MENU_TOKEN@*/Text("1").tag(1)/*@END_MENU_TOKEN@*/
+                                        Text("2").tag(2)
+                                        
+                                        
+                                    }
                                     
-                                }
-                                
-                                Button(action: {
                                     
-                                }, label: {
-                                    Image(systemName: "gear")
-                                })
+                                }.pickerStyle(MenuPickerStyle())
                                 
-                                
-                            }
+                            //}
+                            
+                        }
+                        
+                        Spacer()
+                        
+                        VStack{
+                            
+                            Text("Unit 2: ")
+                            
+                            
+                        }
+                        
+                        Spacer()
+                        
+                    }//HStack
                     
-                    }
-                     */
-                    
+                    Spacer()
                     
                 }//VStack
                 

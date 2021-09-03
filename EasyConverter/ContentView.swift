@@ -11,9 +11,11 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State public var selectedTab: Tab = .USA
-    
     let size: CGFloat = 200 //this variable control size of intraconversion arrows icon
+    
+    let usUnitList: [[String]] = [["Inches"], ["Miles"]]
+    //let britUnitList: [[String]] = [["Centimeters"], ["Meters"]]
+    
     
     var body: some View {
         
@@ -105,14 +107,6 @@ struct ContentView: View {
         
     }
 }
-
-/*
-TabView{
-usaConversionScreen().tabItem { Image(systemName: "dollarsign.square") }
-
-BritainConversionScreen().tabItem { Image(systemName: "eurosign.square") }
-}
-*/
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

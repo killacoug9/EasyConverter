@@ -15,7 +15,6 @@ enum Tab {
     case USToBrit
 }
 
-
 struct USLanding: View {
     
     @State public var selectedTab: Tab = .USA

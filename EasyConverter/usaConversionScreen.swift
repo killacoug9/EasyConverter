@@ -26,10 +26,11 @@ struct usaConversionScreen: View {
 
                 VStack{
                     
+                    //1.
                     Spacer()
                     
                     HStack{
-                        
+                        //2.
                         Spacer()
                         
                         VStack{
@@ -37,6 +38,8 @@ struct usaConversionScreen: View {
                             Text("Unit 1:")
                             
                             //Form {
+                            
+                            
                                 Section {
                                     
                                     Picker(selection: .constant(1), label: Text("Unit").padding()) {
@@ -45,11 +48,9 @@ struct usaConversionScreen: View {
                                             Text("Row \(number)")
                                             
                                          }*/
-                                        
-                                        
-                                        /*@START_MENU_TOKEN@*/Text("1").tag(1)/*@END_MENU_TOKEN@*/
+
+                                        Text("1").tag(1)
                                         Text("2").tag(2)
-                                        
                                         
                                     }
                                     
@@ -59,22 +60,24 @@ struct usaConversionScreen: View {
                             //}
                             
                         }
-                        
+                        //3.
                         Spacer()
                         
                         VStack{
                             
                             Text("Unit 2: ")
                             
-                            
                         }
-                        
+                        //4.
                         Spacer()
-                        
+
                     }//HStack
                     
+                    //5.
                     Spacer()
                     
+                    
+                    Spacer()
                 }//VStack
                 
             }

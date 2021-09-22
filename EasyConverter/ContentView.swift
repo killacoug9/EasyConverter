@@ -11,7 +11,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    let size: CGFloat = 200 //this variable control size of intraconversion arrows icon
+    private let size: CGFloat = 200 //this variable control size of intraconversion arrows icon
     
     let usUnitList: [[String]] = [["Inches"], ["Miles"]]
     //let britUnitList: [[String]] = [["Centimeters"], ["Meters"]]

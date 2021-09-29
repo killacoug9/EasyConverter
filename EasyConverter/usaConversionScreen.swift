@@ -21,15 +21,19 @@ struct usaConversionScreen: View {
     
     private let size: CGFloat = 30
     
-    let usDataTypes = ["inches", "miles", "Ounces"]
+    //will implement the ability to switch to volume, speed etc.
+    let usDataTypes = [["Inches", "Feet", "Miles"], ["Ounces", "Liters"]]
     @State private var unitIndex = 0
     
-    let usDataTypes2 = ["inches", "miles", "Ounces"]
+    let usDataTypes2 = [["Inches", "Feet", "Miles"], ["Ounces", "Liters"]]
+    //let usDataTypes2 = ["Inches", "Miles", "Ounces"]
     @State private var unitIndex2 = 0
     
     @State var num1 = ""
     
-    @State var num2 = 0 //Helper.decide_conversion_USA(type1: usDataTypes, type2: usDataTypes2 )
+    //var num2 = Helper.decide_conversion_USA(type1: usDataTypes[unitIndex], type2: usDataTypes2[unitIndex2] )
+    
+    @State var num2 = Helper()
     
     @State private var isEditing = false
 
@@ -50,6 +54,7 @@ struct usaConversionScreen: View {
                     
                     Spacer()
                     
+                    //this is my unit selection HStack
                     HStack{
                         //2.
                         Spacer()
@@ -58,15 +63,12 @@ struct usaConversionScreen: View {
                             
                             Text("Unit 1:")
                                                         
-                            Picker(selection: $unitIndex, label: Text("\(usDataTypes[unitIndex])")) {
-                                        ForEach(0 ..< usDataTypes.count) {
-                                            Text(self.usDataTypes[$0])
+                            Picker(selection: $unitIndex, label: Text("\(usDataTypes[0][unitIndex])")) {
+                                        ForEach(0 ..< usDataTypes[0].count) {
+                                            Text(self.usDataTypes[0][$0])
                                         }
                                 //dataTypeTwo = $unitIndex
                                      }
-                            
-                                     //Text("Your favorite framework: \(usDataTypes[unitIndex])")
- 
                                   }.padding().pickerStyle(MenuPickerStyle())
                                 //}
                                 
@@ -77,9 +79,9 @@ struct usaConversionScreen: View {
                             
                             Text("Unit 2: ")
                             
-                            Picker(selection: $unitIndex2, label: Text("\(usDataTypes2[unitIndex2])")) {
-                                        ForEach(0 ..< usDataTypes2.count) {
-                                            Text(self.usDataTypes2[$0])
+                            Picker(selection: $unitIndex2, label: Text("\(usDataTypes2[0][unitIndex2])")) {
+                                        ForEach(0 ..< usDataTypes2[0].count) {
+                                            Text(self.usDataTypes2[0][$0])
                                         }
                                 
                                 
@@ -114,7 +116,9 @@ struct usaConversionScreen: View {
                                 .frame(width: size, height: size, alignment: .leading)
                                 .foregroundColor(.orange)
                             
-                            Text("\(num2)").font(.system(size: 30.0))
+                            
+                            Text("\(num2.decide_conversion_USA(type1: usDataTypes[0][unitIndex], type2: usDataTypes2[0][unitIndex2]))")
+                                .font(.system(size: 30.0))
                             
                             /*
                             TextField(
